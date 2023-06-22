@@ -1,0 +1,50 @@
+.tenantlist {
+  padding: 20px;
+  width: 100%;
+  margin: 0px auto;
+  border-radius: 7px;
+}
+
+.main-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.table-container {
+  overflow-x: auto;
+  width: 60%;
+}
+
+.tenantlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 7px;
+}
+
+.tenantlist-table th,
+.tenantlist-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.tenantlist-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+.tenantlist-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tenantlist-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.tenantlist-table td {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
