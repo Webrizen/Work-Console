@@ -6,7 +6,7 @@ const RouteGuard = ({ children }) => {
         // console.log("not logined");
     }
     else{
-       console.log("ok")
+       console.log("ok");
     }
 
     return <>{children}</>
