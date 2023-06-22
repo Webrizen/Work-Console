@@ -13,6 +13,7 @@
 .logout {
   display: flex;
   height: 100vh;
+  overflow-y: scroll;
   align-items: center;
   justify-content: center;
   flex-direction: column;
