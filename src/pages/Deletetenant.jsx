@@ -15,7 +15,7 @@ function Deletetenant() {
   }, []);
 
   const handleDelete = (index) => {
-    // Remove the selected tenant from the list
+  if (window.confirm("Are you sure you want to delete this tenant?")) {
     const updatedTenantList = [...tenantList];
     updatedTenantList.splice(index, 1);
     setTenantList(updatedTenantList);
@@ -24,7 +24,9 @@ function Deletetenant() {
     localStorage.setItem("tenantDetails", JSON.stringify(updatedTenantList));
 
     alert("Tenant deleted!");
-  };
+  }
+};
+
 
   return (
     <>

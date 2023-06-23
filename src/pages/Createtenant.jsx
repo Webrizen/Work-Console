@@ -19,25 +19,36 @@ function Createtenant() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
+    // Check if email or domain already exist
+    const existingTenant = allTenants.find(
+      (tenant) => tenant.email === tenantEmail || tenant.domain === tenantDomain
+    );
+  
+    if (existingTenant) {
+      alert('Email or domain already exists!');
+      return;
+    }
+  
     const tenantDetails = {
       name: tenantName,
       email: tenantEmail,
       domain: tenantDomain
     };
-
+  
     const updatedTenants = [...allTenants, tenantDetails];
     setAllTenants(updatedTenants);
-
+  
     // Save the updated tenant details to local storage
     localStorage.setItem('tenantDetails', JSON.stringify(updatedTenants));
-
+  
     setTenantName('');
     setTenantEmail('');
     setTenantDomain('');
-
+  
     alert('Tenant details saved!');
   };
+  
 
   return (
     <>
