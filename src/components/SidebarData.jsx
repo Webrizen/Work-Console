@@ -1,12 +1,12 @@
 export const SidebarData = [
   {
-    title: 'Create-Tenant',
-    path: '/create-tenant',
+    title: 'Dashboard',
+    path: '/',
     cName: 'nav-text'
   },
   {
-    title: 'Delete-Tenant',
-    path: '/delete-tenant',
+    title: 'Create-Tenant',
+    path: '/create-tenant',
     cName: 'nav-text'
   },
   {

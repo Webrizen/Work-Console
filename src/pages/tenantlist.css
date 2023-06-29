@@ -48,3 +48,30 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 0.3px solid silver;
+}
+
+.dashboard__logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dashboard__search {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 10px;
+  width: 100%;
+  margin-left: auto;
+}
