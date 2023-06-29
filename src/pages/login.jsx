@@ -23,7 +23,7 @@ const Login = () => {
   return (
     <>
       <div
-        className="createtenant"
+        className="logout"
         style={{ border: "1px solid black", padding: "1rem" }}
       >
         <h1>Welcome Back - Login</h1>

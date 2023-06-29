@@ -18,6 +18,12 @@
   justify-content: center;
   flex-direction: column;
   font-size: 1.5rem;
+  border: none;
+  height: 100vh;
+}
+
+.createtenant{
+  height: auto;
 }
 
 button{
