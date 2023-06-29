@@ -68,7 +68,7 @@ const Home = () => {
           )}
           {showNoResults && (
             <div className="dashboard__no-results">
-              <h2>No search results found for this term</h2>
+              <h2>No search results found.</h2>
             </div>
           )}
         </div>
