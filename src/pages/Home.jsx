@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import Layout from '../components/layout';
-import './tenantlist.css';
+import React, { useState } from "react";
+import Layout from "../components/layout";
+import "./tenantlist.css";
 
 const Home = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showNoResults, setShowNoResults] = useState(false);
 
   const handleSearch = () => {
-    const storedTenantDetails = localStorage.getItem('tenantDetails');
+    const storedTenantDetails = localStorage.getItem("tenantDetails");
     if (storedTenantDetails) {
       const parsedTenantDetails = JSON.parse(storedTenantDetails);
       const filteredResults = parsedTenantDetails.filter(
@@ -20,6 +20,36 @@ const Home = () => {
       setSearchResults(filteredResults);
       setShowNoResults(filteredResults.length === 0);
     }
+  };
+
+  const handleSuggestionClick = (suggestion) => {
+    setSearchTerm(suggestion);
+    handleSearch();
+  };
+
+  const renderSuggestions = () => {
+    const storedTenantDetails = localStorage.getItem("tenantDetails");
+    if (storedTenantDetails) {
+      const parsedTenantDetails = JSON.parse(storedTenantDetails);
+      const filteredSuggestions = parsedTenantDetails.filter(
+        (tenant) =>
+          tenant.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          tenant.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          tenant.domain.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+      return filteredSuggestions.map((suggestion) => (
+        <div
+          key={suggestion.email}
+          className="suggestion"
+          onClick={() => handleSuggestionClick(suggestion.name)}
+        >
+          {suggestion.name}
+        </div>
+      ));
+    }
+
+    return null;
   };
 
   return (
@@ -35,6 +65,9 @@ const Home = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
+              {searchTerm.length > 0 && (
+                <div className="suggestions">{renderSuggestions()}</div>
+              )}
               <button onClick={handleSearch}>Search</button>
             </div>
           </div>
